@@ -1,13 +1,13 @@
 // https://zerojudge.tw/ShowProblem?problemid=a020
 #include <iostream>
 #include<cstring>
+#include<string>
 using namespace std;
 
 int main(){
 	int result=0;
-	char id[10];
-	cin.get();
-	cin.getline(id, 10);
+	char id[11];
+	cin.getline(id, 11);
 	if(id[0]=='A'){
 		result += 1;
 	}
@@ -88,14 +88,15 @@ int main(){
 	}
 
 	for(int i=1,j=8;i<9;i++,j--){
-		result += j*int(id[i]);
+		int digit = id[i] - '0';
+        result += j * digit;
 	}
-	result += int(id[9]);
+	result += id[9] - '0';
 	 
 	if (result % 10 == 0) {
-        cout << result <<"real";
+        cout << "real";
     } 
 	else {
-        cout << result << "fake";
+        cout << "fake";
     }
 }
